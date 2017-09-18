@@ -53,7 +53,7 @@ setup(
     name = 'pyroaring',
     ext_modules = pyroaring,
     headers=['roaring.hh'],
-    version='0.1.5',
+    version='0.1.5+dd.0',
     description='Fast and lightweight set for unsigned 32 bits integers.',
     long_description = long_description,
     url='https://github.com/Ezibenroc/PyRoaringBitMap',

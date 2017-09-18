@@ -52,6 +52,7 @@ else:
 setup(
     name = 'pyroaring',
     ext_modules = pyroaring,
+    headers=['roaring.hh'],
     version='0.1.5',
     description='Fast and lightweight set for unsigned 32 bits integers.',
     long_description = long_description,

@@ -44,10 +44,11 @@ if 'DEBUG' in os.environ:
     compile_args.extend(['-O0', '-g'])
 else:
     compile_args.append('-O3')
-if 'ARCHI' in os.environ:
-    compile_args.extend(['-DDISABLE_X64', '-march=%s' % os.environ['ARCHI']])
-else:
-    compile_args.append('-march=native')
+
+archi = os.environ.get('ARCHI', 'x86-64')
+if archi != 'native':
+    compile_args.append('-DDISABLE_X64')
+compile_args.append('-march=%s' % archi)
 
 filename = 'pyroaring.%s' % ext
 pyroaring = Extension('pyroaring',
